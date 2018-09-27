@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="edu.stanford.cs108.bunnyworld.EditShapeActivity">
+
+
+    <TextView
+        android:id="@+id/currentPage"
+        android:text="Page Name Placeholder"
+        android:textSize="18sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:text="Current Shape:"
+            android:textSize="16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Spinner
+            android:id="@+id/main_shapes_spinner"
+            android:layout_width="289dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:textSize="10dp"
+            android:layout_weight="1"
+            android:text="Save Page"
+            android:onClick="savePage" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:textSize="10dp"
+            android:layout_weight="1"
+            android:text="Delete Shape"
+            android:onClick="deleteShape" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+
+        <EditText
+            android:id="@+id/shape_name"
+            android:hint="Enter new shape name!"
+            android:layout_height="40dp"
+            android:textSize="18dp"
+            android:digits="abcdefghijklmnopqrstuvwxyz1234567890"
+            android:layout_width="match_parent" />
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:textSize="10dp"
+            android:layout_weight="1"
+            android:text="Create New Shape"
+            android:onClick="createNewShape" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <edu.stanford.cs108.bunnyworld.EditPageView
+            android:id="@+id/EditPageView"
+            android:layout_width="262dp"
+            android:layout_height="262dp"
+            android:layout_weight="1" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="92dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:text="Current Image:"
+                android:textSize="12sp" />
+
+            <Spinner
+
+                android:id="@+id/images_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+            <Switch
+                android:layout_gravity="right"
+                android:id="@+id/movable_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Movable"
+                />
+
+            <Switch
+                android:layout_gravity="right"
+                android:id="@+id/visible_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Visible"
+                />
+
+
+            <TextView
+                android:id="@+id/script_text"
+                android:layout_width="81dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:text="Create Script"
+                android:textSize="12sp" />
+
+            <Spinner
+                android:id="@+id/script_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onScriptSpinnerClick"
+            android:textSize="10dp"
+            android:text="Proceed"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="clearScript"
+                android:text="Clear Script"
+                android:textSize = "10dp"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="editShape"
+                android:textSize="10dp"
+                android:text="Edit Shape"/>
+
+
+    </LinearLayout>
+
+    </LinearLayout>
+
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:text="X:" />
+
+        <EditText
+            android:id="@+id/xText"
+            android:layout_width="69dp"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:text="Y:" />
+
+        <EditText
+            android:id="@+id/yText"
+            android:layout_width="69dp"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:text="Width:" />
+
+        <EditText
+            android:id="@+id/widthText"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Height:" />
+
+        <EditText
+            android:id="@+id/heightText"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:inputType="numberDecimal" />
+
+
+    </LinearLayout>
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="shapeText"
+            android:textSize="10dp"
+            android:text="add text"/>
+
+        <EditText
+            android:id="@+id/shapeText"
+            android:layout_width="wrap_content"
+            android:hint="Add Shape Text Here!"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+        />
+
+
+    </LinearLayout>
+
+</LinearLayout>
+
+</LinearLayout>
